@@ -1,17 +1,31 @@
-<table>
-  <thead>
-    <tr>
-      <th>Aircraft Model</th>
-      <th>Tail Number</th>
-    </tr>
-  </thead>
+<h2 class="subheader" style="text-align:center;">All Flight Entries</h2>
 
-  <tbody>
-    <% @logentries.each do |log_entry| %>  
-      <tr>
-        <td><%= log_entry.aircraft_model %></td>
-        <td><%= log_entry.tail_number %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="small-3 small-centered columns">
+  <div class="row">
+    <table>
+      <thead>
+	<tr>
+	  <th>Flight Date (UTC)</th>
+	  <th>Aircraft Model</th>
+	  <th>Tail Number</th>
+	  <th>Military Service</th>
+	  <th>Military Unit</th>
+	  <th>FAA Part Number</th>
+	</tr>
+      </thead>
+
+      <tbody>
+	<% @logentries.each do |log_entry| %>
+	<tr>
+	  <td><%= log_entry.flight_date %></td>
+          <td><%= log_entry.aircraft_model %></td>
+          <td><%= log_entry.tail_number %></td>
+	  <td><%= log_entry.military_service %></td>
+	  <td><%= log_entry.military_unit %></td>
+	  <td><%= log_entry.faa_operation_part %></td>
+	</tr>
+	<% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150101232659) do
+ActiveRecord::Schema.define(:version => 20150102032019) do
+
+  create_table "airports", :force => true do |t|
+    t.string   "airport_type"
+    t.string   "name"
+    t.decimal  "lat",                :precision => 15, :scale => 10, :default => 0.0
+    t.decimal  "long",               :precision => 15, :scale => 10, :default => 0.0
+    t.integer  "elevation"
+    t.string   "airport_identifier"
+    t.datetime "created_at",                                                          :null => false
+    t.datetime "updated_at",                                                          :null => false
+  end
 
   create_table "logentries", :force => true do |t|
     t.datetime "created_at",              :null => false
