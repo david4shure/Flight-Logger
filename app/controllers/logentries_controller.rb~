@@ -1,0 +1,2 @@
+class LogentriesController < ApplicationController
+end
