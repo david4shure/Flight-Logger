@@ -1,3 +1,17 @@
-<% @logentries.each do |le| %>
-  <%= le.inspect %>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Aircraft Model</th>
+      <th>Tail Number</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logentries.each do |log_entry| %>  
+      <tr>
+        <td><%= log_entry.aircraft_model %></td>
+        <td><%= log_entry.tail_number %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

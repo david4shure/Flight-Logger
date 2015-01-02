@@ -1,16 +1,11 @@
 <table>
+  <thead>
+    <tr>
+      <th>Aircraft Model</th>
+      <th>Tail Number</th>
+    </tr>
+  </thead>
 
-  <tr>
-    <td>Aircraft Model</td>
-    <td>Tail Number</td>
-  </tr>
-
-
-  <% @logentries.each do |le| %>  
-  <tr>
-    <td><%= le.aircraft_model %></td>
-    <td><%= le.tail_number %></td>
-  </tr>
-  <% end %>
+  <%= @logentry.inspect %>
 
 </table>
