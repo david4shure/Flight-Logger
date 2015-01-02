@@ -1,3 +1,0 @@
-<% @logentries.each do |le| %>
-  <%= le.inspect %>
-<% end %>
