@@ -10,4 +10,13 @@ class LogEntriesController < ApplicationController
   def show
     @logentry = LogEntry.find params[:id]
   end
+
+  def create
+    @logentry = LogEntry.create params[:log_entry]
+    if @logentry.valid?
+      redirect_to "/log_entries/new"
+    else
+      render "/log_entries/new"
+    end
+  end
 end
