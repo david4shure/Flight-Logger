@@ -59,3 +59,11 @@
 
     <%= f.submit "Save Log Entry" %>
   <% end %>
+
+<script>
+  $(document).ready(function() {
+    $("#log_entry_flight_date").datepicker();
+    $("#log_entry_takeoff_time").datetimepicker();
+    $("#log_entry_landing_time").datetimepicker();
+  });
+</script>
