@@ -1,42 +1,123 @@
 <h2 class="subheader" style="text-align:center;">All Flight Entries</h2>
 
-<div class="small-3 small-centered columns">
-  <div class="row">
-    <table>
-      <thead>
-	<tr>
-	  <th>Flight Date (UTC)</th>
-	  <th>From</th>
-	  <th>Intermediate Airport</th>
-	  <th>Second Intermediate Airport</th>
-	  <th>To</th>
-	  <th>Takeoff Time</th>
-	  <th>Landing Time</th>
-	  <th>Aircraft Model</th>
-	  <th>Tail Number</th>
-	  <th>Military Service</th>
-	  <th>Military Unit</th>
-	  <th>FAA Part Number</th>
-	  <th>Mission Number</th>
-	  <th>Type of Flight</th>
-	  <th>Prop</th>
-	  <th>Jet</th>
-	  <th>Turbine</th>
-	</tr>
-      </thead>
+<div style="overflow-x:scroll;">
+<table>
+  <thead>
+    <tr>
+      <th>Flight Date (UTC)</th>
+      <th>From</th>
+      <th>Intermediate Airport</th>
+      <th>Second Intermediate Airport</th>
+      <th>To</th>
+      <th>Takeoff Time</th>
+      <th>Landing Time</th>
+      <th>Aircraft Model</th>
+      <th>Tail Number</th>
+      <th>Military Service</th>
+      <th>Military Unit</th>
+      <th>FAA Part Number</th>
+      <th>Mission Number</th>
+      <th>Type of Flight</th>
+      <th>Prop</th>
+      <th>Jet</th>
+      <th>Turbine</th>
+      <th>Single-Engine Land</th>
+      <th>Single-Engine Seaplane</th>
+      <th>Multi-Engine Land</th>
+      <th>Full Motion Simulator</th>
+      <th>Other Aircrew Time</th>
+      <th>Ground Trainer</th>
+      <th>Takeoffs</th>
+      <th>Touch & Go's</th>
+      <th>Day Landings</th>
+      <th>Night Landings</th>
+      <th>NVG Takeoffs</th>
+      <th>NVG Landings</th>
+      <th>Instrument Approaches</th>
+      <th>Dual Received</th>
+      <th>First Pilot</th>
+      <th>Copilot</th>
+      <th>Aircraft Commander</th>
+      <th>Pilot in Command</th>
+      <th>Instructor</th>
+      <th>Civilian</th>
+      <th>Day Flight Hours</th>
+      <th>Night Flight Hours</th>
+      <th>Simulated Instrument</th>
+      <th>Actual Instrument</th>
+      <th>Cross Country</th>
+      <th>Night Vision Low Level</th>
+      <th>Night Vision High Level</th>
+      <th>Night Vision Goggles</th>
+      <th>Combat Flight Time</th>
+      <th>Total Flight Duration</th>
+      <th>Catapult Launches</th>
+      <th>Bolters</th>
+      <th>Carrier Landings</th>
+      <th>Field Carrier Landing (FCLP)</th>
+      <th>Remarks</th>
+      <th>Instructor / Other Crew</th>
+    </tr>
+  </thead>
 
-      <tbody>
-	<% @logentries.each do |log_entry| %>
-	<tr>
-	  <td><%= log_entry.flight_date %></td>
-          <td><%= log_entry.aircraft_model %></td>
-          <td><%= log_entry.tail_number %></td>
-	  <td><%= log_entry.military_service %></td>
-	  <td><%= log_entry.military_unit %></td>
-	  <td><%= log_entry.faa_operation_part %></td>
-	</tr>
-	<% end %>
-      </tbody>
-    </table>
-  </div>
+  <tbody>
+    <% @logentries.each do |log_entry| %>
+    <tr>
+      <td><%= log_entry.flight_date %></td>
+      <td><%= log_entry.from %></td>
+      <td><%= log_entry.intermediate_airport %></td>
+      <td><%= log_entry.second_intermediate_airport %></td>
+      <td><%= log_entry.to %></td>
+      <td><%= log_entry.takeoff_time %></td>
+      <td><%= log_entry.landing_time %></td>
+      <td><%= log_entry.aircraft_model %></td>
+      <td><%= log_entry.tail_number %></td>
+      <td><%= log_entry.military_service %></td>
+      <td><%= log_entry.military_unit %></td>
+      <td><%= log_entry.faa_operation_part %></td>
+      <td><%= log_entry.mission_number %></td>
+      <td><%= log_entry.type_of_flight %></td>
+      <td><%= log_entry.prop %></td>
+      <td><%= log_entry.jet %></td>
+      <td><%= log_entry.turbine_time %></td>
+      <td><%= log_entry.single_engine_land %></td>
+      <td><%= log_entry.single_engine_sea %></td>
+      <td><%= log_entry.multi_engine_land %></td>
+      <td><%= log_entry.full_motion_simulator %></td>
+      <td><%= log_entry.other_aircrew_time %></td>
+      <td><%= log_entry.ground_trainer %></td>
+      <td><%= log_entry.takeoffs %></td>
+      <td><%= log_entry.touch_and_gos %></td>
+      <td><%= log_entry.day_landings %></td>
+      <td><%= log_entry.night_landings %></td>
+      <td><%= log_entry.nvg_takeoffs %></td>
+      <td><%= log_entry.nvg_landings %></td>
+      <td><%= log_entry.no_inst_appr %></td>
+      <td><%= log_entry.dual_received %></td>
+      <td><%= log_entry.first_pilot %></td>
+      <td><%= log_entry.co_pilot %></td>
+      <td><%= log_entry.aircraft_commander %></td>
+      <td><%= log_entry.pilot_in_command %></td>
+      <td><%= log_entry.instructor %></td>
+      <td><%= log_entry.civilian %></td>
+      <td><%= log_entry.day_flight_hours %></td>
+      <td><%= log_entry.night_flight_hours %></td>
+      <td><%= log_entry.simulated_instrument %></td>
+      <td><%= log_entry.actual_instrument %></td>
+      <td><%= log_entry.cross_country %></td>
+      <td><%= log_entry.night_vision_low_level %></td>
+      <td><%= log_entry.night_vision_high_level %></td>
+      <td><%= log_entry.night_vision_goggles %></td>
+      <td><%= log_entry.combat_flight_time %></td>
+      <td><%= log_entry.total_flight_duration %></td>
+      <td><%= log_entry.catapult_launches %></td>
+      <td><%= log_entry.bolters %></td>
+      <td><%= log_entry.carrier_landings %></td>
+      <td><%= log_entry.field_carrier_landings %></td>
+      <td><%= log_entry.remarks %></td>
+      <td><%= log_entry.instructor %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 </div>

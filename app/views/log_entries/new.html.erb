@@ -1,0 +1,61 @@
+<h2 class="subheader" style="text-align:center;">Create New Flight Entry</h2>
+
+<% style_string = "width: 186px; height: 26px; float:left;" %>
+
+  <%= form_for @logentry do |f| %>
+    <%= f.text_field :flight_date, :placeholder => "Flight Date (UTC)", :size => 10, :style => style_string %>
+    <%= f.text_field :from, :placeholder => "From", :size => 10, :style => style_string %>
+    <%= f.text_field :intermediate_airport, :placeholder => "Intermediate Airport", :size => 10, :style => style_string %>
+    <%= f.text_field :second_intermediate_airport, :placeholder => "Second Intermediate Airport", :size => 10, :style => style_string %>
+    <%= f.text_field :to, :placeholder => "To", :size => 10, :style => style_string %>
+    <%= f.text_field :takeoff_time, :placeholder => "Takeoff Time (UTC)", :size => 10, :style => style_string %>
+    <%= f.text_field :landing_time, :placeholder => "Landing Time (UTC)", :size => 10, :style => style_string %>
+    <%= f.text_field :aircraft_model, :placeholder => "Aircraft Model", :size => 10, :style => style_string %>
+    <%= f.text_field :tail_number, :placeholder => "Tail Number", :size => 10, :style => style_string %>
+    <%= f.text_field :military_service, :placeholder => "Military Service", :size => 10, :style => style_string %>
+    <%= f.text_field :military_unit, :placeholder => "Military Unit", :size => 10, :style => style_string %>
+    <%= f.text_field :faa_operation_part, :placeholder => "FAA Part Number", :size => 10, :style => style_string %>
+    <%= f.text_field :mission_number, :placeholder => "Mission Number", :size => 10, :style => style_string %>
+    <%= f.text_field :type_of_flight, :placeholder => "Type of Flight", :size => 10, :style => style_string %>
+    <%= f.text_field :prop, :placeholder => "Prop", :size => 10, :style => style_string %>
+    <%= f.text_field :jet, :placeholder => "Jet", :size => 10, :style => style_string %>
+    <%= f.text_field :turbine_time, :placeholder => "Turbine Time", :size => 10, :style => style_string %>
+    <%= f.text_field :single_engine_land, :placeholder => "Single Engine Land", :size => 10, :style => style_string %>
+    <%= f.text_field :single_engine_sea, :placeholder => "Single Engine SeaPlane", :size => 10, :style => style_string %>
+    <%= f.text_field :multi_engine_land, :placeholder => "Multi Engine Land", :size => 10, :style => style_string %>
+    <%= f.text_field :full_motion_simulator, :placeholder => "Full Motion Simulator", :size => 10, :style => style_string %>
+    <%= f.text_field :other_aircrew_time, :placeholder => "Other Aircrew Time", :size => 10, :style => style_string %>
+    <%= f.text_field :ground_trainer, :placeholder => "Ground Trainer", :size => 10, :style => style_string %>
+    <%= f.text_field :takeoffs, :placeholder => "Takeoffs", :size => 10, :style => style_string %>
+    <%= f.text_field :touch_and_gos, :placeholder => "Touch & Go's", :size => 10, :style => style_string %>
+    <%= f.text_field :day_landings, :placeholder => "Day Landings", :size => 10, :style => style_string %>
+    <%= f.text_field :night_landings, :placeholder => "Night Landings", :size => 10, :style => style_string %>
+    <%= f.text_field :nvg_takeoffs, :placeholder => "NVG Takeoffs", :size => 10, :style => style_string %>
+    <%= f.text_field :nvg_landings, :placeholder => "NVG Landings", :size => 10, :style => style_string %>
+    <%= f.text_field :no_inst_appr, :placeholder => "Instrument Approaches", :size => 10, :style => style_string %>
+    <%= f.text_field :dual_received, :placeholder => "Dual Received", :size => 10, :style => style_string %>
+    <%= f.text_field :first_pilot, :placeholder => "First Pilot", :size => 10, :style => style_string %>
+    <%= f.text_field :co_pilot, :placeholder => "Copilot", :size => 10, :style => style_string %>
+    <%= f.text_field :aircraft_commander, :placeholder => "Aircraft Commander", :size => 10, :style => style_string %>
+    <%= f.text_field :pilot_in_command, :placeholder => "Pilot In Command", :size => 10, :style => style_string %>
+    <%= f.text_field :instructor, :placeholder => "Instructor", :size => 10, :style => style_string %>
+    <%= f.text_field :civilian, :placeholder => "Civilian", :size => 10, :style => style_string %>
+    <%= f.text_field :day_flight_hours, :placeholder => "Day Flight Hours", :size => 10, :style => style_string %>
+    <%= f.text_field :night_flight_hours, :placeholder => "Night Flight Hours", :size => 10, :style => style_string %>
+    <%= f.text_field :simulated_instrument, :placeholder => "Simulated Instrument", :size => 10, :style => style_string %>
+    <%= f.text_field :actual_instrument, :placeholder => "Actual Instrument", :size => 10, :style => style_string %>
+    <%= f.text_field :cross_country, :placeholder => "Cross Country", :size => 10, :style => style_string %>
+    <%= f.text_field :night_vision_low_level, :placeholder => "Night Vision Low Level", :size => 10, :style => style_string %>
+    <%= f.text_field :night_vision_high_level, :placeholder => "Night Vision High Level", :size => 10, :style => style_string %>
+    <%= f.text_field :night_vision_goggles, :placeholder => "Night Vision Goggles", :size => 10, :style => style_string %>
+    <%= f.text_field :combat_flight_time, :placeholder => "Combat Flight Time", :size => 10, :style => style_string %>
+    <%= f.text_field :total_flight_duration, :placeholder => "Total Flight Duration", :size => 10, :style => style_string %>
+    <%= f.text_field :catapult_launches, :placeholder => "Catapult Launches", :size => 10, :style => style_string %>
+    <%= f.text_field :bolters, :placeholder => "Bolters", :size => 10, :style => style_string %>
+    <%= f.text_field :carrier_landings, :placeholder => "Carrier Landings", :size => 10, :style => style_string %>
+    <%= f.text_field :field_carrier_landings, :placeholder => "Field Carrier Landings (FCLP)", :size => 10, :style => style_string %>
+    <%= f.text_field :remarks, :placeholder => "Remarks", :size => 10, :style => style_string %>
+    <%= f.text_field :instructor_crew, :placeholder => "Instructor / Other Crew", :size => 10, :style => style_string %>
+
+    <%= f.submit "Save Log Entry" %>
+  <% end %>

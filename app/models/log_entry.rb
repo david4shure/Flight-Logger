@@ -8,5 +8,6 @@ class LogEntry < ActiveRecord::Base
   :faa_operation_part, :instructor, :carrier_landings, :other_aircrew_time, :night_vision_low_level,
   :night_vision_high_level, :catapult_launches, :touch_and_gos, :bolters, :full_motion_simulator,
   :glider, :intermediate_airport, :second_intermediate_airport, :prop, :jet, :takeoffs,
-  :nvg_takeoffs, :nvg_landings, :field_carrier_landings, :instructor_crew, :turbine
+  :nvg_takeoffs, :nvg_landings, :field_carrier_landings, :instructor_crew, :turbine_time, :civilian,
+  :takeoff_time, :landing_time
 end
