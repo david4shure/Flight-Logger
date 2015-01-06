@@ -1,9 +1,15 @@
 class AirportsController < ApplicationController
 
   def index
-    @airports = Airport.all
+    query = params[:query]
 
-    q = params[:query]
+    if query.present?
+      @airports = Airport.where("airport_identifier LIKE '%" + query + "%' OR name LIKE '%" + query + "%'")
+      puts @airports.to_sql
+    else
+      @airports = Airport.all
+    end
+    
 
     respond_to do |format|
       format.json do
