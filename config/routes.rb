@@ -51,6 +51,7 @@ FlightLogger::Application.routes.draw do
   root :to => "log_entries#index"
 
   resources :log_entries
+  resources :airports
 
   # See how all your routes lay out with "rake routes"
 

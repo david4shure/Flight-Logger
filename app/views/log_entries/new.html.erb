@@ -1,8 +1,17 @@
-<h2 class="subheader" style="text-align:center;">Create New Flight Entry</h2>
-
 <% style_string = "width: 186px; height: 26px; float:left;" %>
 
   <%= form_for @logentry do |f| %>
+    <% if @logentry.errors.any? %>
+
+      <div data-alert class="alert-box alert round">
+        <% @logentry.errors.full_messages.each do |error_message| %>
+          <span style="margin-left:3em;"><%= error_message %></span><br>
+        <% end %>
+      </div>
+    <% end %>
+
+    <h2 class="subheader" style="text-align:center;">Create New Flight Entry</h2>
+
     <%= f.text_field :flight_date, :placeholder => "Flight Date (UTC)", :size => 10, :style => style_string %>
     <%= f.text_field :from, :placeholder => "From", :size => 10, :style => style_string %>
     <%= f.text_field :intermediate_airport, :placeholder => "Intermediate Airport", :size => 10, :style => style_string %>
@@ -57,7 +66,7 @@
     <%= f.text_field :remarks, :placeholder => "Remarks", :size => 10, :style => style_string %>
     <%= f.text_field :instructor_crew, :placeholder => "Instructor / Other Crew", :size => 10, :style => style_string %>
 
-    <%= f.submit "Save Log Entry" %>
+    <div style="display:inline;"><%= f.submit "Save Log Entry", :class => "button success round", :style => "margin-left: 1em;" %></div>
   <% end %>
 
 <script>

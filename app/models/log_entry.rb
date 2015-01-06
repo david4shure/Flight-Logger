@@ -10,4 +10,10 @@ class LogEntry < ActiveRecord::Base
   :glider, :intermediate_airport, :second_intermediate_airport, :prop, :jet, :takeoffs,
   :nvg_takeoffs, :nvg_landings, :field_carrier_landings, :instructor_crew, :turbine_time, :civilian,
   :takeoff_time, :landing_time
+
+  validates :flight_date, presence: true
+  validates :tail_number, presence: true
+  validates :total_flight_duration, presence: true
+  validates :to, presence: true
+  validates :from, presence: true
 end
