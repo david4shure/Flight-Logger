@@ -16,4 +16,5 @@ class LogEntry < ActiveRecord::Base
   validates :total_flight_duration, presence: true
   validates :to, presence: true
   validates :from, presence: true
+
 end
