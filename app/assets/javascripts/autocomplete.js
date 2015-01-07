@@ -4,12 +4,12 @@ function autocomplete(selector) {
 	minLength: 2,
 
 	focus: function(event, ui) {
-            $(selector).val("(" + ui.item.airport_identifier + ") " + ui.item.name);
+            $(selector).val(ui.item.airport_identifier);
             return false;
 	},
 
 	select: function(event, ui) {
-            $(selector).val("(" + ui.item.airport_identifier + ") " + ui.item.name);
+            $(selector).val(ui.item.airport_identifier);
             return false;
 	},
 
