@@ -13,3 +13,13 @@
  *= require jquery.datetimepicker
  *= require_tree .
  */
+
+ul {
+    width: 1em;
+    max-height: 10em;
+    overflow-y: auto;
+}
+
+li {
+    font-size: 10px;
+}

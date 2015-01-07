@@ -75,22 +75,7 @@
     $("#log_entry_takeoff_time").datetimepicker();
     $("#log_entry_landing_time").datetimepicker();
 
-    $("#log_entry_from").autocomplete({
-      source: "/airports.json",
-      minLength: 2,
-
-      focus: function(event, ui) {
-        console.log("focused");
-        $("#log_entry_from").val("(" + ui.item.airport_identifier + ") " + ui.item.name);
-      },
-
-      select: function(event, ui) {
-        console.log("selected");
-        document.getElementById("log_entry_from").value = "hello world";
-      },
-
-    }).data('ui-autocomplete')._renderItem = function( ul, item ) {
-      return $("<li>").append($("<a>").text( "(" + item.airport_identifier + ") " + item.name )).appendTo( ul );
-    }
+    autocomplete("#log_entry_from");
+    autocomplete("#log_entry_to");
   });
 </script>
