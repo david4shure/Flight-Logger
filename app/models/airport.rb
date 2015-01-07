@@ -5,7 +5,7 @@ class Airport < ActiveRecord::Base
     blob = {}
 
     blob[:id]                 = self.id
-    blob[:name]               = self.name
+    blob[:name]               = self.name.titleize
     blob[:airport_identifier] = self.airport_identifier
 
     if options[:single_record]

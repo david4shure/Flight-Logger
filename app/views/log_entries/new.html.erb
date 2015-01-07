@@ -13,7 +13,7 @@
     <h2 class="subheader" style="text-align:center;">Create New Flight Entry</h2>
 
     <%= f.text_field :flight_date, :placeholder => "Flight Date (UTC)", :size => 10, :style => style_string %>
-    <%= f.text_field :from, :placeholder => "From", :size => 10, :style => style_string %>
+    <%= f.text_field :from, :placeholder => "From", :size => 10, :style => style_string, :autocomplete => :on %>
     <%= f.text_field :intermediate_airport, :placeholder => "Intermediate Airport", :size => 10, :style => style_string %>
     <%= f.text_field :second_intermediate_airport, :placeholder => "Second Intermediate Airport", :size => 10, :style => style_string %>
     <%= f.text_field :to, :placeholder => "To", :size => 10, :style => style_string %>
@@ -74,5 +74,23 @@
     $("#log_entry_flight_date").datepicker();
     $("#log_entry_takeoff_time").datetimepicker();
     $("#log_entry_landing_time").datetimepicker();
+
+    $("#log_entry_from").autocomplete({
+      source: "/airports.json",
+      minLength: 2,
+
+      focus: function(event, ui) {
+        console.log("focused");
+        $("#log_entry_from").val("(" + ui.item.airport_identifier + ") " + ui.item.name);
+      },
+
+      select: function(event, ui) {
+        console.log("selected");
+        document.getElementById("log_entry_from").value = "hello world";
+      },
+
+    }).data('ui-autocomplete')._renderItem = function( ul, item ) {
+      return $("<li>").append($("<a>").text( "(" + item.airport_identifier + ") " + item.name )).appendTo( ul );
+    }
   });
 </script>

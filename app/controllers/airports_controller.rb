@@ -1,6 +1,6 @@
 class AirportsController < ApplicationController
   def index
-    query = params[:query].present? ? params[:query].downcase : params[:query]
+    query = params[:term].present? ? params[:term].downcase : params[:term]
 
     if query.present?
       @airports = Airport.where("airport_identifier LIKE '%" + query + "%'")# OR name LIKE '%" + query + "%'")
