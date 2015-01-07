@@ -3,15 +3,18 @@ class Airport < ActiveRecord::Base
 
   def as_json(options = {})
     blob = {}
+
     blob[:id]                 = self.id
-    blob[:airport_type]       = self.airport_type
     blob[:name]               = self.name
+    blob[:airport_identifier] = self.airport_identifier
+
     if options[:single_record]
-      blob[:lat]                = self.lat 
+      blob[:airport_type]       = self.airport_type
+      blob[:lat]                = self.lat
       blob[:long]               = self.long
       blob[:elevation]          = self.elevation
-      blob[:airport_identifier] = self.airport_identifier
     end
+
     blob
   end
 end
