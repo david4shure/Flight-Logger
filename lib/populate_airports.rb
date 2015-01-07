@@ -6,5 +6,5 @@ require 'csv'
 
 
 CSV.foreach("/Users/david.shure/Downloads/airports.csv") do |row|
-  Airport.create!(:airport_type => row[2], :name => row[3], :lat => row[4], :long => row[5], :elevation => row[6], :airport_identifier => row[1])
+  Airport.create!(:airport_type => row[2].downcase, :name => row[3].downcase, :lat => row[4].downcase, :long => row[5].downcase, :elevation => row[6], :airport_identifier => row[1].downcase)
 end
