@@ -1,4 +1,4 @@
-<% style_string = "width: 186px; height: 26px; float:left;margin-left:16px;" %>
+<% style_string = "width: 186px; height: 26px; float:left;margin-left:16px;margin-top:1em;" %>
 
 <div class="panel radius">
   <%= form_for @logentry do |f| %>
@@ -67,7 +67,7 @@
     <%= f.text_field :remarks, :placeholder => "Remarks", :size => 10, :style => style_string %>
     <%= f.text_field :instructor_crew, :placeholder => "Instructor / Other Crew", :size => 10, :style => style_string %>
 
-    <div style="display:inline;"><%= f.submit "Save Log Entry", :class => "button success round", :style => "margin-left: 1.4em;" %></div>
+    <div style="display:inline;"><%= f.submit "Save Log Entry", :class => "btn btn-primary", :style => "margin-left: 1.4em;margin-top:1em;" %></div>
   <% end %>
 </div>
 <script>

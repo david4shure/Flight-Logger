@@ -38,6 +38,5 @@ end
 # To use debugger
 # gem 'debugger'
 
-gem 'foundation-rails'
 gem 'yajl-ruby', :require => "yajl"
 gem "font-awesome-rails"
