@@ -40,3 +40,4 @@ end
 
 gem 'foundation-rails'
 gem 'yajl-ruby', :require => "yajl"
+gem "font-awesome-rails"
