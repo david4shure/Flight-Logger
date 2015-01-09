@@ -18,8 +18,8 @@
     <% @logentries.each do |log_entry| %>
     <tr>
       <td><%= log_entry.flight_date.to_time.strftime('%B, %e %Y') %></td>
-      <td><%= log_entry.from %></td>
-      <td><%= log_entry.to %></td>
+      <td><%= log_entry.from_airport.airport_identifier %></td>
+      <td><%= log_entry.to_airport.airport_identifier %></td>
       <td><%= log_entry.aircraft_model %></td>
       <td style="padding-left:30px;"><%= log_entry.tail_number %></td>
       <td><%= log_entry.instructor %></td>

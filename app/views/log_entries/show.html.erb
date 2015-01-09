@@ -1,11 +1,40 @@
-<table>
-  <thead>
-    <tr>
-      <th>Aircraft Model</th>
-      <th>Tail Number</th>
-    </tr>
-  </thead>
+<!DOCTYPE html>
+<html>
+  <% @to = Airport.where(:airport_identifier => @logentry.to).first %>
+  <% @from = Airport.where(:airport_identifier => @logentry.from).first %>
+  <head>
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaJXYsNnk3xZUYrhHoeLkKOqT3_Vppnik">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var to = new google.maps.LatLng(<%= @to.lat %>, <%= @to.long %>);
+        var from = new google.maps.LatLng(<%= @from.lat %>, <%= @from.long %>);
+        var mapOptions = {
+          zoom: 13,
+          center: to,
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-  <%= @logentry.inspect %>
+        var to_marker = new google.maps.Marker({
+          position: to,
+          map: map,
+          title: 'Hello World!'
+        });
 
-</table>
+        var from_marker = new google.maps.Marker({
+          position: from,
+          map: map,
+          title: 'Hello World!'
+        });
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+<div id="map-canvas"></div>
+  </body>
+</html>

@@ -7,20 +7,31 @@
   <%= form_for @logentry do |f| %>
     <% if @logentry.errors.any? %>
 
+
+
+    <div class="alert alert-danger" role="alert">
+      <% @logentry.errors.full_messages.each do |error_message| %>
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        <%= error_message %>
+	<br />
+      <% end %>
+    </div>
+
+
       <div data-alert class="alert-box alert round">
-        <% @logentry.errors.full_messages.each do |error_message| %>
-          <span style="margin-left:3em;"><%= error_message %></span><br>
-        <% end %>
       </div>
     <% end %>
 
     <h2 class="subheader" style="text-align:center;">Create New Flight Entry</h2>
 
     <%= f.text_field :flight_date, :placeholder => "Flight Date (UTC)", :size => 10, :style => style_string %>
-    <%= f.text_field :from, :placeholder => "From", :size => 10, :style => style_string, :autocomplete => :on %>
+    <input id="log_entry_from" placeholder="From" size="10" style="width: 186px; height: 26px; float:left;margin-left:16px;margin-top:1em;" type="text">
+    <%= f.hidden_field :from_airport_id %>
     <%= f.text_field :intermediate_airport, :placeholder => "Intermediate Airport", :size => 10, :style => style_string %>
     <%= f.text_field :second_intermediate_airport, :placeholder => "Second Intermediate Airport", :size => 10, :style => style_string %>
-    <%= f.text_field :to, :placeholder => "To", :size => 10, :style => style_string %>
+    <%= f.hidden_field :to_airport_id %>
+    <input id="log_entry_to" placeholder="To" size="10" style="width: 186px; height: 26px; float:left;margin-left:16px;margin-top:1em;" type="text">
     <%= f.text_field :takeoff_time, :placeholder => "Takeoff Time (UTC)", :size => 10, :style => style_string %>
     <%= f.text_field :landing_time, :placeholder => "Landing Time (UTC)", :size => 10, :style => style_string %>
     <%= f.text_field :aircraft_model, :placeholder => "Aircraft Model", :size => 10, :style => style_string %>

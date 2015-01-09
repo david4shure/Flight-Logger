@@ -12,6 +12,7 @@ class LogEntriesController < ApplicationController
   end
 
   def create
+    puts params[:log_entry]
     @logentry = LogEntry.create params[:log_entry]
     if @logentry.valid?
       redirect_to "/log_entries/new"

@@ -40,6 +40,7 @@ Airports = {
 
 	    select: function(event, ui) {
 		me.state_hash[selector] = ui.item;
+		$(selector + "_airport_id").attr('value',ui.item.id);
 		if (me.state_hash["#log_entry_from"] !== undefined && me.state_hash["#log_entry_to"] !== undefined) {
 		    var distance = me.distanceBetween(me.state_hash["#log_entry_from"], me.state_hash["#log_entry_to"]);
 		    console.log(distance);
