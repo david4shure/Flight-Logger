@@ -8,7 +8,7 @@
       <th>From</th>
       <th>To</th>
       <th>Aircraft Model</th>
-      <th>Remarks</th>
+      <th>Tail Number</th>
       <th>Instructor / Other Crew</th>
       <th>View Entry</th>
     </tr>
@@ -17,11 +17,11 @@
   <tbody>
     <% @logentries.each do |log_entry| %>
     <tr>
-      <td><%= log_entry.flight_date.to_time.strftime('%B %e at %l:%M %p') %></td>
+      <td><%= log_entry.flight_date.to_time.strftime('%B, %e %Y') %></td>
       <td><%= log_entry.from %></td>
       <td><%= log_entry.to %></td>
       <td><%= log_entry.aircraft_model %></td>
-      <td><%= log_entry.remarks %></td>
+      <td style="padding-left:30px;"><%= log_entry.tail_number %></td>
       <td><%= log_entry.instructor %></td>
       <td><a href="/log_entries/<%= log_entry.id %>"><i class="fa fa-search fa-2x" style="margin-left:.85em;"></i></a></td>
     </tr>
