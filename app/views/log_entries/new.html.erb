@@ -73,15 +73,19 @@
     <div style="display:inline;"><%= f.submit "Save Log Entry", :class => "btn btn-primary", :style => "margin-left: 1.4em;margin-top:1em;" %></div>
   <% end %>
 </div>
+
+
+<div id="distance_between" style="text-align:center;"/>
+
 <script>
   $(document).ready(function() {
     $("#log_entry_flight_date").datepicker();
     $("#log_entry_takeoff_time").datetimepicker();
     $("#log_entry_landing_time").datetimepicker();
 
-    autocomplete("#log_entry_from");
-    autocomplete("#log_entry_to");
-    autocomplete("#log_entry_intermediate_airport");
-    autocomplete("#log_entry_second_intermediate_airport");
+    Airports.autocomplete("#log_entry_from");
+    Airports.autocomplete("#log_entry_to");
+    Airports.autocomplete("#log_entry_intermediate_airport");
+    Airports.autocomplete("#log_entry_second_intermediate_airport");
   });
 </script>
