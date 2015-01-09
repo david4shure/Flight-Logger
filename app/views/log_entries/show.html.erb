@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <% @to = Airport.where(:airport_identifier => @logentry.to).first %>
-  <% @from = Airport.where(:airport_identifier => @logentry.from).first %>
+  <% @to = @logentry.to_airport %>
+  <% @from = @logentry.from_airport %>
   <head>
     <style type="text/css">
       html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
