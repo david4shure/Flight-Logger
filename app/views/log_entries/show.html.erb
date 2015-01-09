@@ -30,7 +30,22 @@
           title: 'Hello World!'
         });
 
+        var flightPlanCoordinates = [
+          new google.maps.LatLng(<%= @to.lat %>, <%= @to.long %>),
+          new google.maps.LatLng(<%= @from.lat %>, <%= @from.long %>),
+        ];
+        var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: "#2780E3",
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+  
+        flightPath.setMap(map);
+
       }
+
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </head>
