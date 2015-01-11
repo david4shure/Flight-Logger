@@ -15,6 +15,7 @@
         var mapOptions = {
           zoom: 13,
           center: to,
+          mapTypeId: google.maps.MapTypeId.TERRAIN,
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
@@ -50,6 +51,6 @@
     </script>
   </head>
   <body>
-<div id="map-canvas"></div>
+<div id="map-canvas" style="width:50%;border-right:4px solid #2780E3;"></div>
   </body>
 </html>
