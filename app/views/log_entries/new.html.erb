@@ -7,20 +7,18 @@
   <%= form_for @logentry do |f| %>
     <% if @logentry.errors.any? %>
 
-
-
-    <div class="alert alert-danger" role="alert">
-      <% @logentry.errors.full_messages.each do |error_message| %>
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        <span class="sr-only">Error:</span>
-        <%= error_message %>
-	<br />
-      <% end %>
-    </div>
-
-
+      <div class="alert alert-danger" role="alert">
+        <% @logentry.errors.full_messages.each do |error_message| %>
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          <%= error_message %>
+          <br />
+        <% end %>
+      </div>
+  
       <div data-alert class="alert-box alert round">
       </div>
+  
     <% end %>
 
     <h2 class="subheader" style="text-align:center;">Create New Flight Entry</h2>
