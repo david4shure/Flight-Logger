@@ -1,4 +1,6 @@
 class LogEntriesController < ApplicationController
+  before_filter :authenticate_user!
+
   def new
     @logentry = LogEntry.new
   end

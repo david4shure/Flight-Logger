@@ -40,3 +40,4 @@ end
 
 gem 'yajl-ruby', :require => "yajl"
 gem "font-awesome-rails"
+gem 'devise'
