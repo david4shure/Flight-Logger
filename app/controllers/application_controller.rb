@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protected
   def authenticate_user!
     if !user_signed_in?
-      redirect_to "/users/sign_in", :notice => 'if you want to add a notice'
+      redirect_to "/users/sign_in"
     else
       super
     end
