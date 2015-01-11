@@ -10,10 +10,11 @@ class LogEntry < ActiveRecord::Base
   :night_vision_high_level, :catapult_launches, :touch_and_gos, :bolters, :full_motion_simulator,
   :glider, :intermediate_airport, :second_intermediate_airport, :prop, :jet, :takeoffs,
   :nvg_takeoffs, :nvg_landings, :field_carrier_landings, :instructor_crew, :turbine_time, :civilian,
-  :takeoff_time, :landing_time
+  :takeoff_time, :landing_time, :user_id
 
   belongs_to :from_airport, :class_name => 'Airport', :foreign_key => 'from_airport_id'
   belongs_to :to_airport, :class_name => 'Airport', :foreign_key => 'to_airport_id'
+  belongs_to :user
 
   validates :flight_date, presence: true
   validates :tail_number, presence: true

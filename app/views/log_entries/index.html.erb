@@ -1,4 +1,4 @@
-<h2 class="subheader" style="text-align:center;">All Flights</h2>
+<h2 class="subheader" style="text-align:center;">My Recent Flights</h2>
 
 <div style="overflow-x:scroll;">
 <table class="table table-striped">
@@ -15,11 +15,11 @@
   </thead>
 
   <tbody>
-    <% @logentries.each do |log_entry| %>
+    <% current_user.log_entries.each do |log_entry| %>
     <tr>
       <td><%= log_entry.flight_date.to_time.strftime('%B, %e %Y') %></td>
-      <td><%= log_entry.from_airport.airport_identifier %></td>
-      <td><%= log_entry.to_airport.airport_identifier %></td>
+      <td><%= log_entry.from_airport.name.titleize %></td>
+      <td><%= log_entry.to_airport.name.titleize %></td>
       <td><%= log_entry.aircraft_model %></td>
       <td style="padding-left:30px;"><%= log_entry.tail_number %></td>
       <td><%= log_entry.instructor %></td>
