@@ -1,16 +1,26 @@
+
+<div class="well" style="text-align:center;">
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+  <% if !devise_error_messages!.empty? %>
+    <div class="alert alert-danger" style="align:center;" role="alert">
+      <% devise_error_messages!.each do |message| %>
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        <%= message %>
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <div class="actions" style="margin-top:0.4em;">
+    <%= f.submit "Send me reset password instructions", :class => "btn btn-primary" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
