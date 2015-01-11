@@ -1,7 +1,8 @@
-<% style_string = "width: 186px; height: 26px; float:left;margin-left:16px;margin-top:1em;" %>
+<% style_string = "width: 186px; height: 26px; margin-left:16px;margin-top:1em;" %>
 
 <br>
-<br>
+
+</div>
 
 <div class="well">
   <%= form_for @logentry do |f| %>
@@ -20,6 +21,9 @@
       </div>
   
     <% end %>
+
+    <div id="distance_between" style="text-align:center;margin-bottom:1em;"></div>
+
 
     <h2 class="subheader" style="text-align:center;">Create New Flight Entry</h2>
 
@@ -79,12 +83,11 @@
     <%= f.text_field :remarks, :placeholder => "Remarks", :size => 10, :style => style_string %>
     <%= f.text_field :instructor_crew, :placeholder => "Instructor / Other Crew", :size => 10, :style => style_string %>
 
-    <div style="display:inline;"><%= f.submit "Save Log Entry", :class => "btn btn-primary", :style => "margin-left: 2.7em;margin-top:1em;" %></div>
+    <div style="text-align:center;margin-top:0.4em;">
+      <%= f.submit "Save Log Entry", :class => "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
-
-
-<div id="distance_between" style="text-align:center;"/>
 
 <script>
   $(document).ready(function() {
