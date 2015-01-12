@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150112032829) do
+ActiveRecord::Schema.define(:version => 20150112041523) do
 
   create_table "aircraft", :force => true do |t|
     t.datetime "created_at",      :null => false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20150112032829) do
     t.float    "fuel_burn"
     t.string   "description"
     t.boolean  "retired"
-    t.string   "class"
+    t.string   "aircraft_class"
   end
 
   create_table "airports", :force => true do |t|
@@ -42,8 +42,6 @@ ActiveRecord::Schema.define(:version => 20150112032829) do
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.datetime "flight_date"
-    t.string   "aircraft_model"
-    t.string   "tail_number"
     t.string   "remarks"
     t.integer  "no_inst_appr"
     t.integer  "day_landings"
@@ -97,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20150112032829) do
     t.integer  "from_airport_id"
     t.integer  "to_airport_id"
     t.integer  "user_id"
+    t.integer  "aircraft_id"
   end
 
   create_table "users", :force => true do |t|

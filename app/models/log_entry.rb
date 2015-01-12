@@ -1,6 +1,6 @@
 class LogEntry < ActiveRecord::Base
 
-  attr_accessible :flight_date, :aircraft_model, :tail_number, :from_airport_id, :to_airport_id, :remarks,
+  attr_accessible :flight_date, :aircraft_id, :from_airport_id, :to_airport_id, :remarks,
   :no_inst_appr, :day_landings, :night_landings, :single_engine_sea, :single_engine_land,
   :multi_engine_land, :rotor, :cross_country, :day_flight_hours, :night_flight_hours,
   :actual_instrument, :simulated_instrument, :ground_trainer, :dual_received, :pilot_in_command,
@@ -15,9 +15,10 @@ class LogEntry < ActiveRecord::Base
   belongs_to :from_airport, :class_name => 'Airport', :foreign_key => 'from_airport_id'
   belongs_to :to_airport, :class_name => 'Airport', :foreign_key => 'to_airport_id'
   belongs_to :user
+  
+  belongs_to :aircraft
 
   validates :flight_date, presence: true
-  validates :tail_number, presence: true
   validates :total_flight_duration, presence: true
   validates :to_airport_id, presence: true
   validates :from_airport_id, presence: true
