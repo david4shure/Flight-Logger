@@ -11,8 +11,7 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-  </head>
-  <body>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -25,6 +24,8 @@
 	  <% if user_signed_in? %>
             <li><a href="/log_entries">All Entries</a></li>
             <li><a href="/log_entries/new">New Entry</a></li>
+	    <li><a href="/aircraft">My Aircraft</a></li>
+	    <li><a href="/aircraft/new">New Aircraft</a></li>
 	  <% end %>
         </ul>
 
@@ -50,6 +51,9 @@
 	</ul>
       </div>
     </nav>
+
+  </head>
+  <body>
     <br>
     <br>
 
