@@ -1,1 +1,37 @@
+<% style_string = "width: 186px; height: 26px; margin-left:16px;margin-top:1em;" %>
 
+<div class="well">
+  <%= form_for @aircraft do |f| %>
+    <% if @aircraft.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <% @aircraft.errors.full_messages.each do |error_message| %>
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          <%= error_message %>
+          <br />
+        <% end %>
+      </div>
+      <div data-alert class="alert-box alert round">
+      </div>
+    <% end %>
+
+    <h2 class="subheader" style="text-align:center;">Create New Airplane</h2>
+
+    <%= f.text_field :tail_number, :placeholder => "Tail Number", :size => 10, :style => style_string %>
+    <%= f.text_field :manufacturer, :placeholder => "Manufacturer", :size => 10, :style => style_string %>
+    <%= f.text_field :type_designator, :placeholder => "Type Designator", :size => 10, :style => style_string %>
+    <%= f.text_field :model_name, :placeholder => "Model Name", :size => 10, :style => style_string %>
+    <%= f.text_field :fuel_burn, :placeholder => "Fuel Burn (GPH)", :size => 10, :style => style_string %>
+    <%= f.text_field :description, :placeholder => "Description", :size => 10, :style => style_string %>
+    <span>
+      Retired:
+      <%= f.check_box  :retired, :placeholder => "Retired", :size => 10, :style => style_string %>
+    </span>
+    <%= f.text_field  :retired, :placeholder => "Aircraft Class", :size => 10, :style => style_string %>
+    
+
+    <div style="text-align:center;margin-top:0.4em;">
+      <%= f.submit "Create Aircraft", :class => "btn btn-primary" %>
+    </div>
+
+  <% end %>
