@@ -4,4 +4,8 @@ class Aircraft < ActiveRecord::Base
 
   belongs_to :user
   has_many :log_entries
+  
+  def make_and_model
+    "#{manufacturer} #{model_name} : #{tail_number}"
+  end
 end

@@ -36,8 +36,7 @@
     <input id="log_entry_to" placeholder="To" size="10" style="width: 186px; height: 26px; float:left;margin-left:16px;margin-top:1em;" type="text">
     <%= f.text_field :takeoff_time, :placeholder => "Takeoff Time (UTC)", :size => 10, :style => style_string %>
     <%= f.text_field :landing_time, :placeholder => "Landing Time (UTC)", :size => 10, :style => style_string %>
-    <%= f.text_field :aircraft_model, :placeholder => "Aircraft Model", :size => 10, :style => style_string %>
-    <%= f.text_field :tail_number, :placeholder => "Tail Number", :size => 10, :style => style_string %>
+    <%= f.collection_select(:aircraft_id, current_user.aircraft, :id, :make_and_model, { :prompt => 'Select Aircraft' } ) %>
     <%= f.text_field :military_service, :placeholder => "Military Service", :size => 10, :style => style_string %>
     <%= f.text_field :military_unit, :placeholder => "Military Unit", :size => 10, :style => style_string %>
     <%= f.text_field :faa_operation_part, :placeholder => "FAA Part Number", :size => 10, :style => style_string %>
