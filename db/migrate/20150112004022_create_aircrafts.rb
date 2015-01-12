@@ -1,6 +1,6 @@
 class CreateAircrafts < ActiveRecord::Migration
   def change
-    create_table :aircrafts do |t|
+    create_table :aircraft do |t|
 
       t.timestamps
     end
