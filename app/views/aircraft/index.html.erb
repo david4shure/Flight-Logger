@@ -1,3 +1,35 @@
-<%= current_user.aircraft.each do |ac| %>
-  <%= ac.to_s %>
-<% end %>
+<h2 class="subheader" style="text-align:center;">My Aircraft</h2>
+
+<div class="well">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tail Number</th>
+      <th>Manufacturer</th>
+      <th>Type Designator</th>
+      <th>Model Name</th>
+      <th>Fuel Burn (GPH)</th>
+      <th>Description</th>
+      <th>Retired?</th>
+      <th>Aircraft Class</th>
+      <th>Show Aircraft</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_user.aircraft.each do |aircraft| %>
+    <tr>
+      <td style="padding-left:30px;"><%= aircraft.tail_number %></td>
+      <td style="padding-left:30px;"><%= aircraft.manufacturer %></td>
+      <td style="padding-left:30px;"><%= aircraft.type_designator %></td>
+      <td style="padding-left:30px;"><%= aircraft.model_name %></td>
+      <td style="padding-left:30px;"><%= aircraft.fuel_burn %></td>
+      <td style="padding-left:30px;"><%= aircraft.description %></td>
+      <td style="padding-left:30px;"><%= aircraft.retired ? "Yes" : "No" %>
+      <td style="padding-left:30px;"><%= aircraft.aircraft_class %></td>
+      <td><a href="/aircraft/<%= aircraft.id %>"><i class="fa fa-search fa-2x" style="margin-left:.85em;"></i></a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
