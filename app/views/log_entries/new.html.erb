@@ -90,9 +90,9 @@
 
 <script>
   $(document).ready(function() {
-    $("#log_entry_flight_date").datepicker();
-    $("#log_entry_takeoff_time").datetimepicker();
-    $("#log_entry_landing_time").datetimepicker();
+    $("#log_entry_flight_date").datepicker({ dateFormat: 'dd-mm-yy' });
+    $("#log_entry_takeoff_time").datetimepicker({ dateFormat: 'dd-mm-yy' });
+    $("#log_entry_landing_time").datetimepicker({ dateFormat: 'dd-mm-yy' });
 
     Airports.autocomplete("#log_entry_from");
     Airports.autocomplete("#log_entry_to");
