@@ -5,58 +5,75 @@
     <link rel="shortcut icon" href="http://flightaware.com/favicon.ico" />
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-
-          <a class="navbar-brand" href="/">
-	    <i class="fa fa-plane">&nbsp;</i>Flight Logger
-	  </a>
-        </div>
+    <div class="navbar navbar-default">
+      <div class="navbar-header">
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	</button>
+	<a class="navbar-brand" href="/log_entries"><i class="fa fa-plane">&nbsp;</i>Flight Logger</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+	<% if user_signed_in? %>
 	<ul class="nav navbar-nav">
-	  <% if user_signed_in? %>
-            <li><a href="/log_entries">All Entries</a></li>
-            <li><a href="/log_entries/new">New Entry</a></li>
-	    <li><a href="/aircraft">My Aircraft</a></li>
-	    <li><a href="/aircraft/new">New Aircraft</a></li>
-	  <% end %>
-        </ul>
+	  <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Aircraft <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/aircraft">My Aircraft</a></li>
+              <li><a href="/aircraft/new">New Aircraft</a></li>
+            </ul>
+	  </li>
+	  <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Log Entries <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/log_entries">My Log Entries</a></li>
+              <li><a href="/log_entries/new">New Log Entry</a></li>
+            </ul>
+	  </li>
+	</ul>
 
+	<form class="navbar-form navbar-left">
+	  <input type="text" class="form-control col-lg-8" placeholder="Search">
+	</form>
+	<% end %>
 	<ul class="nav navbar-nav navbar-right">
 
-	  <% if !user_signed_in? %>
-            <%- if controller_name != 'sessions' %>
-              <li><%= link_to "Log in", new_session_path(resource_name) %></li>
-            <% end -%>
+	    <% if user_signed_in? %>
+	    <li class="dropdown">
+              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="users/sign_out" data-method="delete">Logout</a></li>
+              </ul>
+	    </li>
+	    <% else %>
+              <%- if controller_name != 'sessions' %>
+                <li><%= link_to "Log in", new_session_path(resource_name) %></li>
+              <% end -%>
     
-            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-              <li><%= link_to "Sign up", new_registration_path(resource_name) %></li>
-            <% end -%>
+              <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                <li><%= link_to "Sign up", new_registration_path(resource_name) %></li>
+              <% end -%>
     
-            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-              <li><%= link_to "Forgot your password?", new_password_path(resource_name) %></li>
-            <% end -%>
-    
-	  <% else %>
-            <li><a><%= current_user.email %></a></li>
-            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-    	  <% end %>
+              <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                <li><%= link_to "Forgot your password?", new_password_path(resource_name) %></li>
+              <% end -%>
+
+	    <% end %>
+
 	</ul>
       </div>
-    </nav>
+    </div>
 
   </head>
   <body>
-    <br>
-    <br>
-
     <%= yield %>
   </body>
   

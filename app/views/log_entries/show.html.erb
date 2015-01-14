@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <% @to = @logentry.to_airport %>
-  <% @from = @logentry.from_airport %>
-  <head>
-    <style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    </style>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaJXYsNnk3xZUYrhHoeLkKOqT3_Vppnik">
-    </script>
-    <script type="text/javascript">
+<% @to = @logentry.to_airport %>
+<% @from = @logentry.from_airport %>
+<style type="text/css">
+  html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+</style>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaJXYsNnk3xZUYrhHoeLkKOqT3_Vppnik">
+</script>
+<script type="text/javascript">
       function initialize() {
         var to = new google.maps.LatLng(<%= @to.lat %>, <%= @to.long %>);
         var from = new google.maps.LatLng(<%= @from.lat %>, <%= @from.long %>);
@@ -48,9 +45,5 @@
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-  </head>
-  <body>
+</script>
 <div id="map-canvas" style="width:50%;border-right:4px solid #2780E3;"></div>
-  </body>
-</html>
