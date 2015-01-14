@@ -22,6 +22,7 @@ group :assets do
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
   gem 'jquery-datetimepicker-rails'
+  gem 'bootstrap-material-design'
 end
 
 # To use ActiveModel has_secure_password
