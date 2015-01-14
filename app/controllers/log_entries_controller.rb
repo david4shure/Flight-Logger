@@ -15,7 +15,7 @@ class LogEntriesController < ApplicationController
 
   def create
     @logentry = current_user.log_entries.new(params[:log_entry])
-    
+
     if @logentry.save
       redirect_to log_entry_path(@logentry)
     else
