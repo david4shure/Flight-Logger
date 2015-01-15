@@ -13,6 +13,7 @@ class AircraftController < ApplicationController
   end
   
   def show
+    @aircraft = Aircraft.find params[:id]
   end
   
   def index

@@ -15,6 +15,18 @@
  *= require_tree .
  */
 
+.btn-primary:not(.btn-link):not(.btn-flat) {
+    background-color: #42f4d4;
+}
+
+.fa-search {
+    color: #42f4d4;
+}
+
+div.field_with_errors {
+    display:inline;
+}
+
 .ui-autocomplete {
     width: 1em;
     max-height: 10em;
