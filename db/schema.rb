@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150112041523) do
+ActiveRecord::Schema.define(:version => 20150115052105) do
 
   create_table "aircraft", :force => true do |t|
     t.datetime "created_at",      :null => false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20150112041523) do
     t.string   "description"
     t.boolean  "retired"
     t.string   "aircraft_class"
+    t.string   "fuel_unit"
   end
 
   create_table "airports", :force => true do |t|

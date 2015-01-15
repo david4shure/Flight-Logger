@@ -1,7 +1,6 @@
-
-<% right_style_string = "width: 80%; margin: 0 auto;" %>
-<% left_style_string = right_style_string %>
-<div class="well">
+<% style_string = "display:block;margin: 0 auto;width:15em;margin-bottom:4px;" %>
+<% left_style_string = style_string %>
+<div class="well" style="width:50%;margin: 0 auto;min-width:30em;">
   <%= form_for @aircraft do |f| %>
     <% if @aircraft.errors.any? %>
       <div class="alert alert-danger" role="alert">
@@ -18,40 +17,17 @@
 
 
 
-    <h2 class="subheader" style="text-align:center;">Create New Airplane</h2>
+    <h2 class="subheader" style="text-align:center;">Create New Aircraft</h2>
 
-    <div class="row">
-      <div class="col-xs-4" style="padding-left:6.5em;">
-	<%= f.text_field :tail_number, :placeholder => "Tail Number", :size => 10, :style => left_style_string %>
-      </div>
-      <div class="col-xs-4" style="padding-left:6.5em;">
-	<%= f.text_field :manufacturer, :placeholder => "Manufacturer", :size => 10, :style => right_style_string %>
-      </div>
-      <div class="col-xs-4" style="padding-left:6.5em;">
-	<%= f.text_field :type_designator, :placeholder => "Type Designator", :size => 10, :style => left_style_string %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-4" style="padding-left:6.5em;">
-	<%= f.text_field :model_name, :placeholder => "Model Name", :size => 10, :style => right_style_string %>
-      </div>
-      <div class="col-xs-4" style="padding-left:6.5em;">
-	<%= f.text_field :fuel_burn, :placeholder => "Fuel Burn (GPH)", :size => 10, :style => left_style_string %>
-      </div>
-      <div class="col-xs-4" style="padding-left:6.5em;">
-	<%= f.text_field :description, :placeholder => "Description", :size => 10, :style => right_style_string %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-4" style="padding-left:6.5em;">
-	<div style="<%= right_style_string %>">Retired? <%= f.check_box  :retired, :placeholder => "Retired" %></div>
-      </div>
-      <div class="col-xs-4">
-
-      </div>
-      <div class="col-xs-4" style="padding-left:6.5em;">
-	<%= f.text_field  :retired, :placeholder => "Aircraft Class", :size => 10, :style => right_style_string %>
-      </div>
+    <div>
+	<%= f.text_field :tail_number, :placeholder => "Tail Number", :size => 10, :style => style_string %>
+	<%= f.text_field :manufacturer, :placeholder => "Manufacturer", :size => 10, :style => style_string %>
+	<%= f.text_field :type_designator, :placeholder => "Type Designator", :size => 10, :style => style_string %>
+	<%= f.text_field :model_name, :placeholder => "Model Name", :size => 10, :style => style_string %>
+	<%= f.text_field :fuel_burn, :placeholder => "Fuel Burn (GPH)", :size => 10, :style => style_string %>
+	<%= f.text_field :fuel_unit, :placeholder => "Fuel Unit (e.g. gallons per hour)", :size => 10, :style => style_string %>
+	<%= f.text_field :description, :placeholder => "Description", :size => 10, :style => style_string %>
+	<%= f.text_field  :retired, :placeholder => "Aircraft Class", :size => 10, :style => style_string %>
     </div>
 
     <div style="text-align:center;margin-top:0.4em;">
