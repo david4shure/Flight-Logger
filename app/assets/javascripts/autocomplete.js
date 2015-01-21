@@ -44,6 +44,7 @@ Airports = {
 		if (me.state_hash["#log_entry_from"] !== undefined && me.state_hash["#log_entry_to"] !== undefined) {
 		    var distance = me.distanceBetween(me.state_hash["#log_entry_from"], me.state_hash["#log_entry_to"]);
 		    console.log(distance);
+		    $("#distance_between").css("display", "block");
 		    $("#distance_between").html("The straight line distance from " + me.state_hash["#log_entry_from"].name + " to " + me.state_hash["#log_entry_to"].name + " is " + (distance * 0.621371192).toFixed(2) + " miles.");
 		    console.log('both airports are selected');
 		}

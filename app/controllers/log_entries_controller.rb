@@ -6,7 +6,7 @@ class LogEntriesController < ApplicationController
   end
   
   def index
-    @logentries = LogEntry.all
+    @logentries = LogEntry.where(:user_id => current_user.id).paginate(:page => params[:page] || 1, :per_page => params[:per_page] || 9)
   end
 
   def show
