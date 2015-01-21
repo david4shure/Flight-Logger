@@ -46,4 +46,23 @@
 
       google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-<div id="map-canvas" style="width:50%;border-right:2px solid #77cba4;margin-top:-1.37em;"></div>
+<div style="float:right;width:50%;height:100%;margin-top:-2em;margin-left:2px;margin-right:13px;">
+  <div class="panel panel-info" style="margin-top:1em;">
+    <div class="panel-heading">
+        <h3 class="panel-title"><center>Flight Information</center></h3>
+    </div>
+
+    <div style="text-align:center;">Flight Date: <%= @logentry.flight_date.strftime("%m/%d/%Y") %> UTC</div>
+    <div style="text-align:center;">Takeoff Time: <%= @logentry.takeoff_time %></div>
+    <div style="text-align:center;">Landing Time: <%= @logentry.landing_time %></div>
+    <div style="text-align:center;">From: <%= @logentry.from_airport.name.titleize %></div>
+    <div style="text-align:center;">To: <%= @logentry.to_airport.name.titleize %></div>
+    <div style="text-align:center;">Total Time: <%= @logentry.total_flight_duration %> hours</div>
+    <div><center>Aircraft: <%= @logentry.aircraft.make_and_model %></center></div>
+    <div><center>Type of Flight: <%= @logentry.type_of_flight %></center></div>
+    <div><center>Remarks: <%= @logentry.remarks %></center></div>
+    <div><center>Instructor / Other Crew: <%= @logentry.instructor_crew %></center></div>
+  </div>
+</div>
+
+<div id="map-canvas" style="width:48%;height:100%;margin-top:-1.37em;"></div>

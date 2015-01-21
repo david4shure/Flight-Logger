@@ -15,6 +15,11 @@
  *= require_tree .
  */
 
+.panel-info>.panel-heading {
+    background-color: #77cba4;
+    border-bottom-color: #77cba4;
+}
+
 .btn-primary:not(.btn-link):not(.btn-flat) {
     background-color: #77cba4;
 }
